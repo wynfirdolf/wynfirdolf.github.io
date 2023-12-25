@@ -204,3 +204,12 @@
   letter-spacing: 0;
   line-height: normal;
 }
+
+.desktop .giphy {
+  position: absolute;
+  width: 210px;
+  height: 191px;
+  top: 36px;
+  left: 1075px;
+  object-fit: cover;
+}
