@@ -18,11 +18,6 @@
     <a href="Purpose.html">The Purpose of this site.</a>
     <a href="credits.html">Credits</a>
   </div>
-  <form name="feedback" method="POST" data-netlify="true">
-    <label for="idea">Share your ideas:</label><br>
-    <textarea id="idea" name="idea" rows="4" cols="50"></textarea><br>
-    <input type="submit" value="Submit">
-  </form>
 </body>
 <script>
  document.querySelector('.hamburger-menu').addEventListener('click', function() {
@@ -38,6 +33,13 @@
       child.style.maxHeight = '0';
     });
   }
+});
+window.addEventListener('blur', function() {
+  document.title = 'Bored Already :('; 
+});
+
+window.addEventListener('focus', function() {
+  document.title = 'Wynfirdolf\'s Website';
 });
 </script>
 </html>
