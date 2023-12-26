@@ -6,10 +6,25 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-  <audio controls autoplay>
-  <source src="img/Silahsiz-Kuvvet-Benim-Inim-Hiphop-64.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
+  <audio id="trumpet" src="img/SKULL TRUMPET.mp3" preload="auto" controls="none" display="none">
+
+  </audio>
 </audio>
+<audio id="silahsız_kuvvet" src="img/Silahsiz-Kuvvet-Benim-Inim-Hiphop-64.mp3"  controls="autoplay">
+</audio>
+
+<script>
+  function playsound_showalert() {
+    var sound = document.getElementById("trumpet");
+    sound.play();
+    alert('Çalışıyorum');
+  }
+</script>
+
+
+<button type="button" onclick="playsound_showalert()" id="trumpet_button">Üzerime Tıkla</button>
+
+<div id="main_page">
     <div class="desktop">
       <div class="overlap-group-wrapper">
         <div class="overlap-group">

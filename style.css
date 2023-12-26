@@ -1,3 +1,8 @@
+body {
+ transform: scale(0.8);
+ transform-origin: top left;
+ margin-left: px
+}
 .desktop {
   background-color: #ffffff;
   display: flex;
@@ -213,3 +218,25 @@
   left: 1075px;
   object-fit: cover;
 }
+#trumpet_button {
+  position: absolute;
+  top: 200px;
+  left: 150px;
+  background-color:#2986cc;
+  color: #ffffff;
+}
+#main_page {
+ margin-left: 500px;
+ margin-top: 10px; 
+}
+#silahsız_kuvvet
+{
+  position: absolute;
+  top: 500px;
+  left: 0px;
+}
+#trumpet {
+  display: none;
+
+}
+
