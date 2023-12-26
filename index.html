@@ -1,53 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-  <audio id="trumpet" src="img/SKULL TRUMPET.mp3" preload="auto" controls="none" display="none">
+<head>
+  <link rel="stylesheet" href="index.css">
+  <title>Wynfirdolf's Website</title>
+</head>
+<body>
+  <a href="credits.html" class="button">Credits</a>
 
-  </audio>
-</audio>
-<audio id="silahsız_kuvvet" src="img/Silahsiz-Kuvvet-Benim-Inim-Hiphop-64.mp3"  controls="autoplay">
-</audio>
-
+  <div class="hamburger-menu">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  
+  <div class="menu-options">
+    <a href="who_is_wynfirdolf.html">Who is Wynfirdolf</a>
+    <a href="Purpose.html">The Purpose of this site.</a>
+    <a href="credits.html">Credits</a>
+  </div>
+  <form name="feedback" method="POST" data-netlify="true">
+    <label for="idea">Share your ideas:</label><br>
+    <textarea id="idea" name="idea" rows="4" cols="50"></textarea><br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
 <script>
-  function playsound_showalert() {
-    var sound = document.getElementById("trumpet");
-    sound.play();
-    alert('Çalışıyorum');
+ document.querySelector('.hamburger-menu').addEventListener('click', function() {
+  var menuOptions = document.querySelector('.menu-options');
+  menuOptions.classList.toggle('open');
+  
+  if (menuOptions.classList.contains('open')) {
+    Array.from(menuOptions.children).forEach(function(child) {
+      child.style.maxHeight = '50px';
+    });
+  } else {
+    Array.from(menuOptions.children).forEach(function(child) {
+      child.style.maxHeight = '0';
+    });
   }
+});
 </script>
-
-
-<button type="button" onclick="playsound_showalert()" id="trumpet_button">Üzerime Tıkla</button>
-
-<div id="main_page">
-    <div class="desktop">
-      <div class="overlap-group-wrapper">
-        <div class="overlap-group">
-          <img class="firefly-windows-xp" src="img/firefly-windows-xp-bliss-wallpaper-80936-1.png" />
-          <div class="text-wrapper">Hello</div>
-          <div class="div">Welcome to my page</div>
-          <img class="element-removebg" src="img/123265-removebg-preview-1.png" />
-          <p class="i-will-approve-this">i will approve this page <br />once its finished<br />kaf kef</p>
-          <img class="pp-handymanny" src="img/pp-handymanny-herobanner-mobile-21234-99602b6a-removebg-preview.png" />
-          <img class="bob-the-builder" src="img/bob-the-builder-removebg-preview-1.png" />
-          <div class="ellipse"></div>
-          <div class="ellipse-2"></div>
-          <img class="polygon" src="img/polygon-2.svg" />
-          <p class="p">Go away ya’ daft ****</p>
-          <p class="this-page-is-still">This page is still cooking<br />mate, check later</p>
-          <img class="img" src="img/polygon-1.svg" />
-          <p class="text-wrapper-2">Unfortunately you came in a bad time</p>
-          <p class="text-wrapper-3">You see, the page is not finished yet.</p>
-          <p class="text-wrapper-4">Please check on this website later.</p>
-          <div class="text-wrapper-5">wynfirdolf.me</div>
-          <img class="giphy" src="img/giphy-1.gif" />
-        </div>
-      </div>
-    </div>
-  </body>
 </html>
+
