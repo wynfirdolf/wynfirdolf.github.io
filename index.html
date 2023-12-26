@@ -21,20 +21,9 @@
         <p>The purpose of this site is for me to learn about HTML, CSS and JavaScript.</p>
       </section>
     </main>
-
-    <div class="hamburger-menu">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    
-    <div class="menu-options">
-      <a href="who_is_wynfirdolf.html">Who is Wynfirdolf</a>
-      <a href="Purpose.html">The Purpose of this site.</a>
-    </div>
-  </div>
-
-  <footer>
+  
+  
+    <footer>
     <p>© Made in 2023 by Wynfirdolf.</p>
     <div class="social-media">
       <a href="https://instagram.com/benyigitd" target="_blank">
@@ -50,22 +39,5 @@
   </footer>
 </body>
 <script src="https://kit.fontawesome.com/67e13a64e8.js" crossorigin="anonymous">
-</script>
-<script>
- document.querySelector('.hamburger-menu').addEventListener('click', function() {
-  var menuOptions = document.querySelector('.menu-options');
-  menuOptions.classList.toggle('open');
-  
-  if (menuOptions.classList.contains('open')) {
-    Array.from(menuOptions.children).forEach(function(child) {
-      child.style.maxHeight = '50px';
-    });
-  } else {
-    Array.from(menuOptions.children).forEach(function(child) {
-      child.style.maxHeight = '0';
-    });
-  }
-})
-  
 </script>
 </html>
