@@ -3,29 +3,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
 body {
     display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     align-items: center;
     justify-content: center;
     height: 100vh;
     margin: 0;
     background-color: #ffffff;
-    font-family: Arial, sans-serif;
+    font-family: ubuntu, sans-serif;
+  }
+  .content {
+    flex: 1 0 auto; /* This will make the content grow to take up all available space */
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   }
   
-  .button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 20px;
-    transition: background-color 0.3s ease;
+  footer {
+    flex-shrink: 0; /* This will prevent the footer from shrinking */
   }
-  
-  .button:hover {
-    background-color: #45a049;
-  }
-  
   .hamburger-menu {
     width: 30px;
     height: 20px;
@@ -56,12 +53,13 @@ body {
     transition: max-height 0.5s ease-in-out; /* this will be the closing speed */
   }
   
+  
   .menu-options.open {
     max-height: 200px;
     transition: max-height 1s ease-in-out; /* this will be the opening speed */
   }
   
-  .menu-options a {
+  .menu-options  a {
     display: block;
     margin-bottom: 10px;
     color: #333;
@@ -74,4 +72,17 @@ body {
   .menu-options.open a {
     max-height: 50px;
     transition: max-height 1s ease-in-out; /* this will be the opening speed */
+  }
+  .social-media a {
+    color: #000000; /* Change the color of the icons */
+    margin: 0 25px; /* Add some margin around the icons */
+    text-decoration: none; /* Remove the underline from the links */
+  }
+  
+  .social-media a:hover {
+    color: #007bff; /* Change the color of the icons when hovered */
+  }
+  
+  .social-media i {
+    font-size: 25px; /* Increase the size of the icons */
   }

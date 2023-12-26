@@ -3,22 +3,54 @@
 <head>
   <link rel="stylesheet" href="index.css">
   <title>Wynfirdolf's Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-  <a href="credits.html" class="button">Credits</a>
+  <div class="content">
+    <main>
+      <h1>Welcome to Wynfirdolf's Website</h1>
+      <p>This is where you can learn all about Wynfirdolf and the purpose of this site.</p>
+    
+      <section>
+        <h2>Who is Wynfirdolf</h2>
+        <p>Wynfirdolf is a literature student thats learning about web design.</p>
+      </section>
+    
+      <section>
+        <h2>The Purpose of This Site</h2>
+        <p>The purpose of this site is for me to learn about HTML, CSS and JavaScript.</p>
+      </section>
+    </main>
 
-  <div class="hamburger-menu">
-    <div></div>
-    <div></div>
-    <div></div>
+    <div class="hamburger-menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    
+    <div class="menu-options">
+      <a href="who_is_wynfirdolf.html">Who is Wynfirdolf</a>
+      <a href="Purpose.html">The Purpose of this site.</a>
+    </div>
   </div>
-  
-  <div class="menu-options">
-    <a href="who_is_wynfirdolf.html">Who is Wynfirdolf</a>
-    <a href="Purpose.html">The Purpose of this site.</a>
-    <a href="credits.html">Credits</a>
-  </div>
+
+  <footer>
+    <p>© Made in 2023 by Wynfirdolf.</p>
+    <div class="social-media">
+      <a href="https://instagram.com/benyigitd" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://linkedin.com/in/benyigitd" target="_blank">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://steamcommunity.com/id/benyigitd" target="_blank">
+        <i class="fa-brands fa-steam-symbol"></i>
+      </a>
+    </div>
+  </footer>
 </body>
+<script src="https://kit.fontawesome.com/67e13a64e8.js" crossorigin="anonymous">
+</script>
 <script>
  document.querySelector('.hamburger-menu').addEventListener('click', function() {
   var menuOptions = document.querySelector('.menu-options');
@@ -33,14 +65,7 @@
       child.style.maxHeight = '0';
     });
   }
-});
-window.addEventListener('blur', function() {
-  document.title = 'Bored Already :('; 
-});
-
-window.addEventListener('focus', function() {
-  document.title = 'Wynfirdolf\'s Website';
-});
+})
+  
 </script>
 </html>
-
