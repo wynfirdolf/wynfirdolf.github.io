@@ -156,5 +156,13 @@ slider.addEventListener('input', function() {
     var color = 'hsl(' + hue + ', 100%, 50%)';
     scrollingText.style.color = color;
 });
+window.onblur = function() {
+  console.log('User has left or unfocused the window.');
+  document.title = 'Bored Already?';
+};
+window.onfocus = function() {
+  console.log('User has returned to the window.');
+  document.title = 'Wynfirdolf\'s Website';
+};
 </script>
 </html>
