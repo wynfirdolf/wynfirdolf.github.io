@@ -8,12 +8,13 @@
 <body>
   <div class="content">
     <main>
+      <button id="color-scheme-button"class="dark-mode">Switch to Dark Mode</button>
       <h1>Welcome to Wynfirdolf's Website</h1>
-      <p>This is where you can learn all about Wynfirdolf and the purpose of this site.</p>
+      <p>This is where you can learn about Wynfirdolf and the purpose of this site.</p>
     
       <section>
         <h2>Who is Wynfirdolf</h2>
-        <p>Wynfirdolf is a literature student thats learning about web design.</p>
+        <p>Wynfirdolf is a literature student that's learning about web design.</p>
       </section>
     
       <section>
@@ -21,23 +22,120 @@
         <p>The purpose of this site is for me to learn about HTML, CSS and JavaScript.</p>
       </section>
     </main>
-  
-  
+    <p id="device-info" class="device-info-text"> </p>
+    <p id="time-info" class="user-time"></p>
+    <button id="time-format-button" class="time-switch-button">Switch to 24-hour format</button>
     <footer>
     <p>© Made in 2023 by Wynfirdolf.</p>
     <div class="social-media">
       <a href="https://instagram.com/benyigitd" target="_blank">
-        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-instagram social-icon"></i>
       </a>
       <a href="https://linkedin.com/in/benyigitd" target="_blank">
-        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-linkedin social-icon"></i>
       </a>
       <a href="https://steamcommunity.com/id/benyigitd" target="_blank">
-        <i class="fa-brands fa-steam-symbol"></i>
+        <i class="fa-brands fa-steam-symbol social-icon"></i>
       </a>
     </div>
   </footer>
 </body>
 <script src="https://kit.fontawesome.com/67e13a64e8.js" crossorigin="anonymous">
+</script>
+<script>
+var deviceInfo = document.getElementById('device-info');
+var timeInfo = document.getElementById('time-info'); // Assuming you have an element with id 'time-info' to display the time
+var userAgent = navigator.userAgent;
+var customText = "You are visiting my site from ";
+
+if (navigator.userAgent.match(/Android/i)) {
+    deviceInfo.textContent = customText + "Android device ";
+} else if (navigator.userAgent.match(/webOS/i)) {
+    deviceInfo.textContent = customText + "webOS device";
+} else if (navigator.userAgent.match(/iPhone/i)) {
+    deviceInfo.textContent = customText + "iPhone";
+} else if (navigator.userAgent.match(/iPad/i)) {
+    deviceInfo.textContent = customText + "iPad";
+} else if (navigator.userAgent.match(/iPod/i)) {
+    deviceInfo.textContent = customText + "iPod";
+} else if (navigator.userAgent.match(/BlackBerry/i)) {
+    deviceInfo.textContent = customText + "BlackBerry";
+} else if (navigator.userAgent.match(/Windows Phone/i)) {
+    deviceInfo.textContent = customText + "Windows Phone";
+} else {
+    // If device cannot be detected, display the browser information
+    if (userAgent.indexOf("Chrome") > -1) {
+        deviceInfo.textContent = customText + "Google Chrome";
+    } else if (userAgent.indexOf("Safari") > -1) {
+        deviceInfo.textContent = customText + "Apple Safari";
+    } else if (userAgent.indexOf("Firefox") > -1) {
+        deviceInfo.textContent = customText + "Mozilla Firefox";
+    } else if (userAgent.indexOf("MSIE") > -1 || userAgent.indexOf("Trident") > -1) {
+        deviceInfo.textContent = customText + "Microsoft Internet Explorer";
+    } else {
+        deviceInfo.textContent = customText + "Unknown browser";
+    }
+}
+// Get user's local time
+var timeFormat = '12h'; // Default time format
+
+function updateTime() {
+    var date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+    var amOrPm = '';
+    if (timeFormat === '12h') {
+        amOrPm = hours >= 12 ? ' PM' : ' AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+    }
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    seconds = seconds < 10 ? '0'+seconds : seconds;
+
+    var strTime = hours + ':' + minutes + ':' + seconds + amOrPm;
+    timeInfo.textContent = "Your local time is " + strTime;
+}
+
+// Update the time immediately, then every second
+updateTime();
+setInterval(updateTime, 1000);
+
+// Add event listener to the button to switch time format
+document.getElementById('time-format-button').addEventListener('click', function() {
+    if (timeFormat === '12h') {
+        timeFormat = '24h';
+        this.textContent = 'Switch to 12-hour format';
+    } else {
+        timeFormat = '12h';
+        this.textContent = 'Switch to 24-hour format';
+    }
+    updateTime(); // Update the time immediately when the format is changed
+});
+var isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+var deviceInfo = document.getElementById('device-info');
+var timeInfo = document.getElementById('time-info');
+var socialIcons = document.getElementsByClassName('social-icon');
+
+function updateColorScheme() {
+    var textColor = isDarkMode ? "#ffffff" : "#000000";
+    document.body.style.backgroundColor = isDarkMode ? "#333333" : "#ffffff";
+    document.body.style.color = textColor;
+    deviceInfo.style.color = textColor;
+    timeInfo.style.color = textColor;
+    for (var i = 0; i < socialIcons.length; i++) {
+        socialIcons[i].style.color = textColor;
+    }
+}
+
+// Update the color scheme immediately
+updateColorScheme();
+
+// Add event listener to the button to switch color scheme
+document.getElementById('color-scheme-button').addEventListener('click', function() {
+    isDarkMode = !isDarkMode; // Toggle the color scheme
+    updateColorScheme(); // Update the color scheme immediately when it is changed
+    this.textContent = isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+});
 </script>
 </html>

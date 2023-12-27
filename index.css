@@ -36,3 +36,42 @@ body {
   .social-media i {
     font-size: 25px; /* Increase the size of the icons */
   }
+  .device-info-text {
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+}
+.user-time {
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+}
+.time-switch-button {
+  color: #ffffff;
+  background-color: #0db10d;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 200px; /* Adjust as needed */
+  font-size: 14px; /* Adjust as needed */
+  }
+  .dark-mode {
+    color: #ffffff;
+    background-color: #000000;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    margin-left: 170px;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 200px; /* Adjust as needed */
+    font-size: 14px; /* Adjust as needed */
+    display:block;
+  }
+  body, .device-info, .time-info, .social-icon {
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
