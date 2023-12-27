@@ -24,6 +24,7 @@
     </main>
     <p id="device-info" class="device-info-text"> </p>
     <p id="time-info" class="user-time"></p>
+    <p id="timezone-info" class="time-zone" ></p>
     <button id="time-format-button" class="time-switch-button">Switch to 24-hour format</button>
     <footer>
     <p>© Made in 2023 by Wynfirdolf.</p>
@@ -78,6 +79,8 @@ if (navigator.userAgent.match(/Android/i)) {
 }
 // Get user's local time
 var timeFormat = '12h'; // Default time format
+var timeZoneInfo = document.getElementById('timezone-info');
+
 
 function updateTime() {
     var date = new Date();
@@ -94,7 +97,9 @@ function updateTime() {
     seconds = seconds < 10 ? '0'+seconds : seconds;
 
     var strTime = hours + ':' + minutes + ':' + seconds + amOrPm;
+    var timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     timeInfo.textContent = "Your local time is " + strTime;
+    timeZoneInfo.textContent = "Your timezone is " + timeZone;
 }
 
 // Update the time immediately, then every second

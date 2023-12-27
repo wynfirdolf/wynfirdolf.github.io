@@ -57,21 +57,22 @@ body {
   box-sizing: border-box;
   width: 200px; /* Adjust as needed */
   font-size: 14px; /* Adjust as needed */
+  font-family: ubuntu;
   }
   .dark-mode {
-    color: #ffffff;
-    background-color: #000000;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px;
-    margin-left: 170px;
-    cursor: pointer;
-    box-sizing: border-box;
-    width: 200px; /* Adjust as needed */
-    font-size: 14px; /* Adjust as needed */
-    display:block;
-  }
-  body, .device-info, .time-info, .social-icon {
+  color: #ffffff;
+  background-color: #000000;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 200px;
+  font-size: 14px;
+  display:block;
+  font-family: ubuntu;
+}
+  body, .device-info-text, .user-time, .social-icon {
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
