@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head>   
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="index.css">
   <title>Wynfirdolf's Website</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -14,32 +16,36 @@
     
       <section>
         <h2>Who is Wynfirdolf</h2>
-        <p>Wynfirdolf is a literature student that's learning about web design.</p>
+        <p>Wynfirdolf is a literature student that's learning about web design. </p>
       </section>
     
       <section>
         <h2>The Purpose of This Site</h2>
-        <p>The purpose of this site is for me to learn about HTML, CSS and JavaScript.</p>
+       <p>The purpose of this site is for me to learn about HTML, CSS and JavaScript.</p> 
       </section>
     </main>
     <p id="device-info" class="device-info-text"> </p>
     <p id="time-info" class="user-time"></p>
     <p id="timezone-info" class="time-zone" ></p>
     <button id="time-format-button" class="time-switch-button">Switch to 24-hour format</button>
-    <footer>
-    <p>© Made in 2023 by Wynfirdolf.</p>
-    <div class="social-media">
-      <a href="https://instagram.com/benyigitd" target="_blank">
-        <i class="fa-brands fa-instagram social-icon"></i>
-      </a>
-      <a href="https://linkedin.com/in/benyigitd" target="_blank">
-        <i class="fa-brands fa-linkedin social-icon"></i>
-      </a>
-      <a href="https://steamcommunity.com/id/benyigitd" target="_blank">
-        <i class="fa-brands fa-steam-symbol social-icon"></i>
-      </a>
-    </div>
-  </footer>
+    <input type="range" min="0" max="255" value="128" class="slider" id="bg-slider">
+    <div class="scrolling-text-box">
+    <p class="scrolling-text">This is some scrolling text!</p>
+      </div>
+      <footer>
+        <p>© Made in 2023 by Wynfirdolf.</p>
+        <div class="social-media">
+          <a href="https://instagram.com/benyigitd" target="_blank">
+            <i class="fa-brands fa-instagram social-icon"></i>
+          </a>
+          <a href="https://linkedin.com/in/benyigitd" target="_blank">
+            <i class="fa-brands fa-linkedin social-icon"></i>
+          </a>
+          <a href="https://steamcommunity.com/id/benyigitd" target="_blank">
+            <i class="fa-brands fa-steam-symbol social-icon"></i>
+          </a>
+        </div>
+      </footer>
 </body>
 <script src="https://kit.fontawesome.com/67e13a64e8.js" crossorigin="anonymous">
 </script>
@@ -50,19 +56,19 @@ var userAgent = navigator.userAgent;
 var customText = "You are visiting my site from ";
 
 if (navigator.userAgent.match(/Android/i)) {
-    deviceInfo.textContent = customText + "Android device ";
+    deviceInfo.textContent = customText + "an Android device ";
 } else if (navigator.userAgent.match(/webOS/i)) {
-    deviceInfo.textContent = customText + "webOS device";
+    deviceInfo.textContent = customText + "a webOS device";
 } else if (navigator.userAgent.match(/iPhone/i)) {
-    deviceInfo.textContent = customText + "iPhone";
+    deviceInfo.textContent = customText + "an iPhone";
 } else if (navigator.userAgent.match(/iPad/i)) {
-    deviceInfo.textContent = customText + "iPad";
+    deviceInfo.textContent = customText + "an iPad";
 } else if (navigator.userAgent.match(/iPod/i)) {
-    deviceInfo.textContent = customText + "iPod";
+    deviceInfo.textContent = customText + "an iPod";
 } else if (navigator.userAgent.match(/BlackBerry/i)) {
-    deviceInfo.textContent = customText + "BlackBerry";
+    deviceInfo.textContent = customText + "a BlackBerry";
 } else if (navigator.userAgent.match(/Windows Phone/i)) {
-    deviceInfo.textContent = customText + "Windows Phone";
+    deviceInfo.textContent = customText + "an Windows Phone";
 } else {
     // If device cannot be detected, display the browser information
     if (userAgent.indexOf("Chrome") > -1) {
@@ -141,6 +147,14 @@ document.getElementById('color-scheme-button').addEventListener('click', functio
     isDarkMode = !isDarkMode; // Toggle the color scheme
     updateColorScheme(); // Update the color scheme immediately when it is changed
     this.textContent = isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+});
+var slider = document.getElementById('bg-slider');
+var scrollingText = document.querySelector('.scrolling-text');
+slider.max = 360; // Set the maximum value of the slider to 360
+slider.addEventListener('input', function() {
+    var hue = this.value;
+    var color = 'hsl(' + hue + ', 100%, 50%)';
+    scrollingText.style.color = color;
 });
 </script>
 </html>

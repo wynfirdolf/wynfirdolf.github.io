@@ -76,3 +76,23 @@ body {
   body, .device-info-text, .user-time, .social-icon {
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
+.scrolling-text-box {
+  width: 200px;
+  height: 50px;
+  border: 0px solid black;
+  overflow: hidden;
+}
+
+.scrolling-text {
+  width: max-content;
+  white-space: nowrap;
+  animation: scrolling 5s linear infinite;
+}
+
+@keyframes scrolling {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+html {
+  scroll-behavior: smooth;
+}
