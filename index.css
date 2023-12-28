@@ -96,3 +96,18 @@ body {
 html {
   scroll-behavior: smooth;
 }
+.button-link {
+  /* Other styles... */
+  position: relative;
+  left: 400px;
+  top: -35px;
+  display: inline-block;
+  padding: 10px 20px; /* Adjust padding as needed */
+  color: white;
+  background-color: #007BFF;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 100px;
+  line-height: 40px; /* Adjust line-height to match the height of the button (including padding) */
+  text-align: center;
+}
