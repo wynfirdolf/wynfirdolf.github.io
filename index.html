@@ -9,9 +9,13 @@
 </head>
 <body>
   <div class="content">
+    <div class="button-container">
+      <button id="color-scheme-button" class="dark-mode">Switch to Dark Mode</button>
+      <a href="credits.html">
+        <button id="Menu" class="menu-button">About Me</button> 
+      </a>
+    </div>
     <main>
-      <button id="color-scheme-button"class="dark-mode">Switch to Dark Mode</button>
-
       <h1>Welcome to Wynfirdolf's Website</h1>
       <p>This is where you can learn about Wynfirdolf and the purpose of this site.</p>
     
@@ -165,5 +169,20 @@ window.onfocus = function() {
   console.log('User has returned to the window.');
   document.title = 'Wynfirdolf\'s Website';
 };
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    console.log("Latitude: " + position.coords.latitude);
+    console.log("Longitude: " + position.coords.longitude);
+  }, function(error) {
+    console.log("Error occurred. Error code: " + error.code);
+    // error.code can be:
+    // 0: unknown error
+    // 1: permission denied
+    // 2: position unavailable (error response from location provider)
+    // 3: timed out
+  });
+} else {
+  console.log("Geolocation is not supported by this browser.");
+}
 </script>
 </html>
